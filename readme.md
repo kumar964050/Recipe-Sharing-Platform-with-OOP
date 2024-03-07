@@ -1,5 +1,7 @@
 # Recipe Sharing Platform
 
+NOTE : Removed Authentication for GET recipe, GET Recipe By Id
+
 ## Table of Contents
 
 - [Dependencies](#dependencies)
@@ -88,12 +90,12 @@ fot development    npm run dev
 #### GET /api/v1/recipe
 
 - **Description:** Get all recipes.
-- **Authenticated:** Yes
+- **Authenticated:** NO
 
 #### GET /api/v1/recipe/:recipeId
 
 - **Description:** Get a specific recipe by ID.
-- **Authenticated:** Yes
+- **Authenticated:** NO
 
 #### PUT /api/v1/recipe/:recipeId
 
