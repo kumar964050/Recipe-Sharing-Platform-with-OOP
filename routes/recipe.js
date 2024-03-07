@@ -8,7 +8,7 @@ const {
   deleteRecipe,
 } = require("../controllers/recipe");
 
-routes.route("/").post(createRecipe).get(authenticate, getAllRecipes);
+routes.route("/").post(authenticate, createRecipe).get(getAllRecipes);
 routes
   .route("/:recipeId")
   .get(getRecipeById)
