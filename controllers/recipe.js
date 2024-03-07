@@ -4,6 +4,12 @@ exports.createRecipe = async (req, res, next) => {
   try {
     const { title, description, ingredients, instructions } = req.body;
 
+    if (!(title && description && ingredients && instructions)) {
+      return res.status(400).json({
+        msg: "all fields are required",
+      });
+    }
+
     const recipe = new Recipe(title, description, ingredients, instructions);
     const result = await recipe.save();
 
