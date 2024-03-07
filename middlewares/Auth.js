@@ -11,6 +11,7 @@ const authenticate = async (req, res, next) => {
     const userObj = new User();
     // verify and get user object
     const user = await userObj.verifyJwtToken(token);
+    if (!user) return res.status(400).json({ msg: "No user found" });
     req.user = user;
     next();
   } catch (error) {
